@@ -11,6 +11,8 @@ docker images
 
 # コンテナの外からは 49160、コンテナの中では 8080 ポートを使う（＾～＾）
 docker run -p 49160:8080 -d muzudho/outfield-kifuwarabe-web
+# 本番だと 49160 じゃなくて 80 にするんじゃないか（＾～＾）
+# docker run -p 80:8080 -d muzudho/outfield-kifuwarabe-web
 
 docker ps
 
