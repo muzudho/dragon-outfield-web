@@ -1,8 +1,8 @@
 FROM node:16-slim
 
 # 開発中に使うんで（＾～＾）
-RUN apt-get update && apt-get install -y \
-    curl
+# RUN apt-get update && apt-get install -y \
+#     curl
 
 # アプリケーションディレクトリを作成する
 WORKDIR /usr/src/app
@@ -20,7 +20,7 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-# 追加（＾～＾）
-EXPOSE 49160
+# ↓ これは要らないぜ（＾～＾）
+# EXPOSE 49160
 
 CMD [ "node", "server.js" ]
