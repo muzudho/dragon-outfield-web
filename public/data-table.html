@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+          <template>
+            <v-data-table
+              :headers="headers"
+              :items="desserts"
+              :items-per-page="5"
+              class="elevation-1"
+            ></v-data-table>
+          </template>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data:{
+          headers: [
+            { text: 'ふらぐ', value: 'フラグ' },
+            { text: 'きせん名', value: '棋戦名' },
+            { text: 'げーむ名', value: 'GameName' },
+            { text: 'せんてID', value: '先手ID' },
+            { text: 'せんてプログラム', value: '先手プログラム' },
+            { text: 'せん手じょうたい', value: '先手状態' },
+            { text: 'せん手しょうはい', value: '先手勝敗' },
+            { text: 'ご手しょうはい', value: '後手勝敗' },
+            { text: 'ご手じょうたい', value: '後手状態' },
+            { text: 'ごてID', value: '後手ID' },
+            { text: 'ごてプログラム', value: '後手プログラム' },
+            { text: 'せんてかち星', value: '先手勝星' },
+            { text: 'ごてかち星', value: '後手勝星' },
+            { text: 'そーと用', value: 'ソート用' },
+            { text: 'せんてフー', value: '先手WHO' },
+            { text: 'ごてフー', value: '後手WHO' },
+            { text: 'せんてぜん回', value: '先手前回' },
+            { text: 'ごてぜん回', value: '後手前回' },
+            { text: 'だこくぜん回', value: '打刻前回' },
+            { text: 'きふリンク', value: '棋譜リンク' },
+            { text: 'していキー', value: '指定キー' },
+          ],
+          desserts: JSON.parse('[{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"18","先手プログラム":"suisho18","先手状態":"対局待ち","先手勝敗":"千(先)","後手勝敗":"千(後)","後手状態":"対局待ち","後手ID":"3","後手プログラム":"suisho3","先手勝星":"13.8","後手勝星":"16.2","ソート用":"17.58","先手WHO":" suisho18 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho3 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho18_suisho3-300-2F+suisho18+suisho3+20210513232328/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"22","先手プログラム":"suisho22","先手状態":"対局待ち","先手勝敗":"〇","後手勝敗":"●","後手状態":"対局待ち","後手ID":"14","後手プログラム":"suisho14","先手勝星":"12.4","後手勝星":"15.4","ソート用":"16.64","先手WHO":" suisho22 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho14 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho22_suisho14-300-2F+suisho22+suisho14+20210513232327/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"23","先手プログラム":"suisho23","先手状態":"対局待ち","先手勝敗":"〇","後手勝敗":"●","後手状態":"対局待ち","後手ID":"24","後手プログラム":"suisho24","先手勝星":"14.6","後手勝星":"13.2","ソート用":"15.92","先手WHO":" suisho23 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho24 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho23_suisho24-300-2F+suisho23+suisho24+20210513232325/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"15","先手プログラム":"suisho15","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"4","後手プログラム":"suisho4","先手勝星":"12.4","後手勝星":"14","ソート用":"15.24","先手WHO":" suisho15 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho4 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho15_suisho4-300-2F+suisho15+suisho4+20210513232324/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"19","先手プログラム":"suisho19","先手状態":"対局待ち","先手勝敗":"千(先)","後手勝敗":"千(後)","後手状態":"対局待ち","後手ID":"16","後手プログラム":"suisho16","先手勝星":"12.8","後手勝星":"12.6","ソート用":"14.06","先手WHO":" suisho19 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho16 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho19_suisho16-300-2F+suisho19+suisho16+20210513232323/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"27","先手プログラム":"suisho27","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"17","後手プログラム":"suisho17","先手勝星":"11.6","後手勝星":"12","ソート用":"13.16","先手WHO":" suisho27 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho17 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho27_suisho17-300-2F+suisho27+suisho17+20210513232322/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"10","先手プログラム":"suisho10","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"21","後手プログラム":"suisho21","先手勝星":"12","後手勝星":"11.2","ソート用":"13.12","先手WHO":" suisho10 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho21 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho10_suisho21-300-2F+suisho10+suisho21+20210513232320/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"20","先手プログラム":"suisho20","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"11","後手プログラム":"suisho11","先手勝星":"11.6","後手勝星":"10.8","ソート用":"12.68","先手WHO":" suisho20 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho11 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho20_suisho11-300-2F+suisho20+suisho11+20210513232319/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"5","先手プログラム":"suisho5","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"12","後手プログラム":"suisho12","先手勝星":"11.2","後手勝星":"11","ソート用":"12.3","先手WHO":" suisho5 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho12 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho5_suisho12-300-2F+suisho5+suisho12+20210513232318/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"7","先手プログラム":"suisho7","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"28","後手プログラム":"suisho28","先手勝星":"9.4","後手勝星":"11.2","ソート用":"12.14","先手WHO":" suisho7 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho28 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho7_suisho28-300-2F+suisho7+suisho28+20210513232317/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"1","先手プログラム":"suisho1","先手状態":"対局待ち","先手勝敗":"〇","後手勝敗":"●","後手状態":"対局待ち","後手ID":"9","後手プログラム":"suisho9","先手勝星":"11.2","後手勝星":"6.6","ソート用":"11.86","先手WHO":" suisho1 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho9 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho1_suisho9-300-2F+suisho1+suisho9+20210513232316/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"25","先手プログラム":"suisho25","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"6","後手プログラム":"suisho6","先手勝星":"10.6","後手勝星":"8.4","ソート用":"11.44","先手WHO":" suisho25 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho6 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho25_suisho6-300-2F+suisho25+suisho6+20210513232314/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"13","先手プログラム":"suisho13","先手状態":"対局待ち","先手勝敗":"●","後手勝敗":"〇","後手状態":"対局待ち","後手ID":"2","後手プログラム":"suisho2","先手勝星":"9.4","後手勝星":"9","ソート用":"10.3","先手WHO":" suisho13 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho2 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho13_suisho2-300-2F+suisho13+suisho2+20210513232313/41","指定キー":"shocho2"},{"フラグ":"済","棋戦名":"12回裏","GameName":"dr2ts7-12-bottom","先手ID":"26","先手プログラム":"suisho26","先手状態":"対局待ち","先手勝敗":"〇","後手勝敗":"●","後手状態":"対局待ち","後手ID":"8","後手プログラム":"suisho8","先手勝星":"8","後手勝星":"9.4","ソート用":"10.2","先手WHO":" suisho26 x1 game_waiting floodgate-300-10F *","後手WHO":" suisho8 x1 game_waiting floodgate-300-10F *","先手前回":"","後手前回":"","打刻前回":"","棋譜リンク":"https://golan.sakura.ne.jp/denryusen/dr2_tsec/dist/#/dr2tsec+buoy_shocho2_dr2ts7-12-bottom_41_suisho26_suisho8-300-2F+suisho26+suisho8+20210513232312/41","指定キー":"shocho2"}]')
+        }
+    })
+  </script>
+</body>
+
+</html>
