@@ -47,6 +47,25 @@ Keep-Alive: timeout=5
 [http://localhost:49160](http://localhost:49160)  
 [http://localhost:49160/data-table.html](http://localhost:49160/data-table.html)  
 
+## Run(2)
+
+```shell
+# ファイルを Git Hub にプッシュしたあと
+
+cd /usr/local/src/outfield-kifuwarabe-web
+
+docker ps
+
+docker stop <CONTAINER ID>
+
+git pull
+
+docker build . -t muzudho/outfield-kifuwarabe-web
+
+# 本番環境では 80番ポートを使うぜ（＾～＾）
+docker run -p 80:8080 -d muzudho/outfield-kifuwarabe-web
+```
+
 ## Referencese
 
 * [Node.jsとExpressでローカルサーバーを構築する(2) ―Expressでルーティング―](https://qiita.com/koedamon/items/fb85c3eb32e7838f9d7c)
