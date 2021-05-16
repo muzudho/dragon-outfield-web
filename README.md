@@ -2,16 +2,32 @@
 
 外野で　きふわらべが何かやってるサーバー（＾～＾）  
 
+## Stop
+
+既に動いている場合は、止めるところからだぜ（＾ｑ＾）  
+
+```shell
+# ファイルを Git Hub にプッシュしたあととか
+
+cd /usr/local/src/outfield-kifuwarabe-web/nodejs
+
+docker ps
+
+docker stop <CONTAINER ID>
+
+git pull
+
+docker build . -t muzudho/outfield-kifuwarabe-web
+```
+
 ## Run
 
 ```shell
-docker build . -t muzudho/outfield-kifuwarabe-web
-
 docker images
 
 # コンテナの外からは 49160、コンテナの中では 8080 ポートを使う（＾～＾）
 docker run -p 49160:8080 -d muzudho/outfield-kifuwarabe-web
-# 本番だと 49160 じゃなくて 80 にするんじゃないか（＾～＾）
+# 本番だと 49160 じゃなくて 80番ポートを使うぜ（＾～＾）
 # docker run -p 80:8080 -d muzudho/outfield-kifuwarabe-web
 
 docker ps
@@ -47,25 +63,23 @@ Keep-Alive: timeout=5
 [http://localhost:49160](http://localhost:49160)  
 [http://localhost:49160/data-table.html](http://localhost:49160/data-table.html)  
 
-## Run(2)
+## docker-compose
 
 ```shell
-# ファイルを Git Hub にプッシュしたあと
-
 cd /usr/local/src/outfield-kifuwarabe-web
 
-docker ps
+# ビルドしたいときだけ --build を付けろだぜ（＾ｑ＾）
+docker-compose up -d --build
 
-docker stop <CONTAINER ID>
-
-git pull
-
-docker build . -t muzudho/outfield-kifuwarabe-web
-
-# 本番環境では 80番ポートを使うぜ（＾～＾）
-docker run -p 80:8080 -d muzudho/outfield-kifuwarabe-web
+# 止めるとき
+docker-compose down
 ```
 
 ## Referencese
 
+* セキュリティ
+  * 自拠点のIPアドレスを調べる方法
+    * [あなたが現在インターネットに接続しているグローバルIPアドレス確認](https://www.cman.jp/network/support/go_access.cgi)
+  * [Amazon EC2 アクセス制御レシピ](https://dev.classmethod.jp/articles/ec2-cacess/)
 * [Node.jsとExpressでローカルサーバーを構築する(2) ―Expressでルーティング―](https://qiita.com/koedamon/items/fb85c3eb32e7838f9d7c)
+  
