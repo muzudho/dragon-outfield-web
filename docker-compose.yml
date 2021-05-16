@@ -15,5 +15,5 @@ services:
       dockerfile: Dockerfile
     image: muzudho/warabenture2-nodejs
     container_name: warabenture2-nodejs
-    ports:
-      - 49160:8080
+    #ports:
+    #  - 49160:8080
