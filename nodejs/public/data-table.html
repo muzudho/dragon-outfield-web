@@ -11,16 +11,35 @@
 <body>
   <div id="app">
     <v-app>
+      <v-navigation-drawer app>
+        <!-- -->
+      </v-navigation-drawer>
+
+      <v-app-bar app>
+        <!-- -->
+      </v-app-bar>
+
       <v-main>
-          <template>
-            <v-data-table
-              :headers="headers"
-              :items="desserts"
-              :items-per-page="5"
-              class="elevation-1"
-            ></v-data-table>
-          </template>
+          <v-container fluid>
+            <!-- If using vue-router -->
+            <router-view></router-view>
+
+            <template>
+              <v-data-table
+                :headers="headers"
+                :items="desserts"
+                :items-per-page="5"
+                class="elevation-1"
+              ></v-data-table>
+            </template>
+  
+          </v-container>
+
       </v-main>
+
+      <v-footer app>
+        <!-- -->
+      </v-footer>
     </v-app>
   </div>
 
