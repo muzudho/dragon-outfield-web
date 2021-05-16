@@ -1,14 +1,13 @@
 version: "3"
 services:
-
   nginx:
     build:
-      context: ./nginx     # Dockerfile保存場所
-      dockerfile: Dockerfile    # Dockerfileファイル名
-        image: muzudho/warabenture2-nginx      # docker image name
-        container_name: warabenture2-nginx       # docker container name
-        ports: # ポート接続
-          - 80:80
+      context: ./nginx # Dockerfile保存場所
+      dockerfile: Dockerfile # Dockerfileファイル名
+    image: muzudho/warabenture2-nginx # docker image name
+    container_name: warabenture2-nginx # docker container name
+    ports: # ポート接続
+      - 80:80
 
   nodejs:
     build:

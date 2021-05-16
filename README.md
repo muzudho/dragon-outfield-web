@@ -1,4 +1,4 @@
-# outfield-kifuwarabe-web
+# Warabenture2
 
 外野で　きふわらべが何かやってるサーバー（＾～＾）  
 
@@ -9,7 +9,7 @@
 ```shell
 # ファイルを Git Hub にプッシュしたあととか
 
-cd /usr/local/src/outfield-kifuwarabe-web/nodejs
+cd /usr/local/src/warabenture2/nodejs
 
 docker ps
 
@@ -17,7 +17,7 @@ docker stop <CONTAINER ID>
 
 git pull
 
-docker build . -t muzudho/outfield-kifuwarabe-web
+docker build . -t muzudho/warabenture2-nodejs
 ```
 
 ## Run
@@ -26,9 +26,9 @@ docker build . -t muzudho/outfield-kifuwarabe-web
 docker images
 
 # コンテナの外からは 49160、コンテナの中では 8080 ポートを使う（＾～＾）
-docker run -p 49160:8080 -d muzudho/outfield-kifuwarabe-web
+docker run -p 49160:8080 -d muzudho/warabenture2-nodejs
 # 本番だと 49160 じゃなくて 80番ポートを使うぜ（＾～＾）
-# docker run -p 80:8080 -d muzudho/outfield-kifuwarabe-web
+# docker run -p 80:8080 -d muzudho/warabenture2-nodejs
 
 docker ps
 
@@ -66,7 +66,7 @@ Keep-Alive: timeout=5
 ## docker-compose
 
 ```shell
-cd /usr/local/src/outfield-kifuwarabe-web
+cd /usr/local/src/warabenture2
 
 # ビルドしたいときだけ --build を付けろだぜ（＾ｑ＾）
 docker-compose up -d --build
